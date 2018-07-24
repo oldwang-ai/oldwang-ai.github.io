@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>GitHub的结构 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近要用到opencv扩展模块，就到opencv官网上找，直接点击了网站下方的GitHub链接，然后就看到了opencv扩展模块的repository，即opencv_contrib。点进去翻到最后，发现最晚的版本是3.0.0-beta版，而我现在用的是opencv 2.4.9版本，难道之前的版本没有扩展模块吗？ 到处搜索，找答案，后来发现应该是3.0之前的版本，扩展模块没有单独列出。我之前用2.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub的结构">
+<meta property="og:url" content="http://yoursite.com/2018/07/18/GitHub的结构/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近要用到opencv扩展模块，就到opencv官网上找，直接点击了网站下方的GitHub链接，然后就看到了opencv扩展模块的repository，即opencv_contrib。点进去翻到最后，发现最晚的版本是3.0.0-beta版，而我现在用的是opencv 2.4.9版本，难道之前的版本没有扩展模块吗？ 到处搜索，找答案，后来发现应该是3.0之前的版本，扩展模块没有单独列出。我之前用2.">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-24T13:03:56.869Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GitHub的结构">
+<meta name="twitter:description" content="最近要用到opencv扩展模块，就到opencv官网上找，直接点击了网站下方的GitHub链接，然后就看到了opencv扩展模块的repository，即opencv_contrib。点进去翻到最后，发现最晚的版本是3.0.0-beta版，而我现在用的是opencv 2.4.9版本，难道之前的版本没有扩展模块吗？ 到处搜索，找答案，后来发现应该是3.0之前的版本，扩展模块没有单独列出。我之前用2.">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-GitHub的结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/GitHub的结构/" class="article-date">
+  <time datetime="2018-07-18T12:36:01.000Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      GitHub的结构
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近要用到opencv扩展模块，就到opencv官网上找，直接点击了网站下方的GitHub链接，然后就看到了opencv扩展模块的repository，即opencv_contrib。点进去翻到最后，发现最晚的版本是3.0.0-beta版，而我现在用的是opencv 2.4.9版本，难道之前的版本没有扩展模块吗？</p>
+<p>到处搜索，找答案，后来发现应该是3.0之前的版本，扩展模块没有单独列出。我之前用2.4.9版本时，一般都是在自己的代码工程中设置好依赖的「包含」和「库」的目录，没有太多关注源码，更没有仔细看过sources这个文件夹里面的内容。</p>
+<p>其实sources里面就是当前版本的源码，而2.4.9版本的sources目录下有个modules\contrib，这就是2.4.9的扩展模块。</p>
+<h5 id="需要自己编译"><a href="#需要自己编译" class="headerlink" title="需要自己编译"></a>需要自己编译</h5><p>要使用扩展模块，是需要自己编译的，就是用CMake工具，配好opencv和contrib的路径，然后执行一系列的操作，网上有详细步骤。</p>
+<h5 id="不熟悉opencv源码结构"><a href="#不熟悉opencv源码结构" class="headerlink" title="不熟悉opencv源码结构"></a>不熟悉opencv源码结构</h5><p>这次之所以花费了很多时间去找2.4.9的扩展模块，是因为：</p>
+<ol>
+<li>不了解opencv源码的结构</li>
+<li>不了解opencv不同版本在GitHub上的演进</li>
+</ol>
+<h5 id="GitHub的结构"><a href="#GitHub的结构" class="headerlink" title="GitHub的结构"></a>GitHub的结构</h5><p>我想，首先应该熟悉GitHub。当我们登陆 <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 后。</p>
+<p>在头像左侧有个加号：</p>
+<ul>
+<li>New repository</li>
+<li>Import repository</li>
+</ul>
+<p>新建仓库和导入仓库，我们知道GitHub是托管代码用的，可以利用这两个选项在GitHub上建立「代码仓库」。</p>
+<p>另外两个是：</p>
+<ul>
+<li>New gist</li>
+<li>New organization</li>
+</ul>
+<p>这两个没用过，暂时不说。</p>
+<p>然后点击头像上面的Your profile，可以看到有Overview、Repositories、Stars、Followers、Following几个选项，我之前建了两个代码仓库，所以Repositories这里标记为2。</p>
+<p>点击进入博客的Repositories，有下面几个页面：</p>
+<ul>
+<li>Code</li>
+<li>Issues</li>
+<li>Pull requests</li>
+<li>Projects</li>
+<li>Wiki</li>
+<li>Insights</li>
+<li>Settings</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/18/GitHub的结构/" data-id="cjjzpq8tv0000qgr5v8h1m7ap" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/14/为什么有了我？/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">为什么有了我？</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/18/GitHub的结构/">GitHub的结构</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/14/为什么有了我？/">为什么有了我？</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/14/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
